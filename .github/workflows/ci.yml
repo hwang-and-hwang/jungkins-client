@@ -1,0 +1,43 @@
+name: CI
+on: pull_request
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: 체크아웃
+        uses: actions/checkout@v3
+      - name: 노드 셋업
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: 캐시 체크
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ hashFiles('**/package-lock.json') }}
+      - name: 의존성 설치
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+      - name: 린트 실행
+        run: npm run lint
+  e2e-test:
+    name: E2E-Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: 체크아웃
+        uses: actions/checkout@v3
+      - name: 노드 셋업
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: 캐시 체크
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ hashFiles('**/package-lock.json') }}
+      - name: 의존성 설치
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
