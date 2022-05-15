@@ -8,6 +8,7 @@
     "preview": "vite preview",
     "lint": "eslint src/**/*.{ts,tsx} --quiet",
     "test": "vitest",
+    "test:e2e": "start-server-and-test dev http-get://localhost:3000 cypress:run",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "storybook": "start-storybook -p 6006",
