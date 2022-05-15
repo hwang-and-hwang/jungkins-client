@@ -59,7 +59,7 @@
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": ["src/test/**", "**/*{.,_}{test,spec}.{ts,tsx}"],
+        "devDependencies": ["src/test/**", "**/*{.,_}{test,spec}.{ts,tsx}", "cypress/**"],
         "optionalDependencies": false
       }
     ]
