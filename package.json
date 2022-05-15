@@ -8,6 +8,8 @@
     "preview": "vite preview",
     "lint": "eslint src/**/*.{ts,tsx} --quiet",
     "test": "vitest",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "prepare": "husky install"
