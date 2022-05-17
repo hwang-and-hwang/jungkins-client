@@ -38,8 +38,10 @@ jobs:
         with:
           path: node_modules
           key: ${{ hashFiles('**/package-lock.json') }}
-      - name: 의존성 설치
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci
-      - name: e2e 테스트 실행
-        run: npm run test:e2e
+      - name: E2E 테스트 실행
+        uses: cypress-io/github-action@v2
+        with:
+          install-command: npm ci
+          build: npm run build
+          start: npm run preview
+          command: npm run cypress:run
