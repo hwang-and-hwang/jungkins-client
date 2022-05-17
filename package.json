@@ -18,7 +18,8 @@
     "cypress:run": "cypress run",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pre-commit": "npx lint-staged && vitest related --run --passWithNoTests"
   },
   "dependencies": {
     "react": "^18.0.0",
@@ -66,8 +67,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "eslint --fix",
-      "vitest related --run --passWithNoTests"
+      "eslint --fix"
     ]
   }
 }
