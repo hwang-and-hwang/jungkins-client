@@ -43,5 +43,5 @@ jobs:
         with:
           install-command: npm ci
           build: npm run build
-          start: npm run preview
+          start: npm run preview -- --port 3000
           command: npm run cypress:run
