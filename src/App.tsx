@@ -1,9 +1,9 @@
 import Router from '@/Router';
+import './global.css';
 
 function App() {
   return (
     <div>
-      jungkins
       <Router />
     </div>
   );
