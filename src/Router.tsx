@@ -1,27 +1,38 @@
 import React, { FC } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { LoginPage, ProjectPage, DeploymentPage } from './pages';
+import { LoginPage, DeploymentPage } from './pages';
+
+import { MainPage } from '@/pages/MainPage';
+import { ProjectDetailPage } from '@/pages/ProjectDetailPage';
+import { ProjectListPage } from '@/pages/ProjectListPage';
 
 type RouterProps = {};
 
+// @ts-ignore
 const Router: FC<RouterProps> = () => (
   <BrowserRouter>
     <Routes>
       <Route
-        path='/login'
+        path='/'
+        element={<MainPage />}
+      />
+      <Route
+        path='login'
         element={<LoginPage />}
       />
       <Route
-        path='/'
-        element={<ProjectPage />}
+        path='project'
+        element={<ProjectListPage />}
       />
-      <Route path='/deployment'>
-        <Route
-          path=':projectId'
-          element={<DeploymentPage />}
-        />
-      </Route>
+      <Route
+        path='project/:projectId'
+        element={<ProjectDetailPage />}
+      />
+      <Route
+        path='deployment/:projectId'
+        element={<DeploymentPage />}
+      />
     </Routes>
   </BrowserRouter>
 );

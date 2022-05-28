@@ -1,3 +1,4 @@
 export * from './DeploymentPage';
 export * from './LoginPage';
-export * from './ProjectPage';
+export * from './ProjectListPage';
+export * from './ProjectDetailPage';
