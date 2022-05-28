@@ -6,7 +6,7 @@ module.exports = {
   core: {
     builder: '@storybook/builder-vite',
   },
-  addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
+  addons: ['@storybook/addon-links', '@storybook/addon-essentials', 'storybook-dark-mode'],
   framework: '@storybook/react',
   viteFinal: async (config) => {
     config.plugins.push(vanillaExtractPlugin());
