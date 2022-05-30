@@ -11,7 +11,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react(), vanillaExtractPlugin(), reactRefresh({
     exclude: [/\.stories\.(t|j)sx?$/, /node_modules/],
-    include: ['**/*.tsx']
+    include: ['**/*.tsx', '**/*.ts']
   })],
   resolve: {
     alias: {
