@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
 import { LoginButton, LoginButtonProps } from '@/components/LoginButton';
 
@@ -10,8 +10,6 @@ export default {
   },
 } as Meta;
 
-function Template(args: LoginButtonProps) {
-  return <LoginButton {...args} />;
-}
+const Template: Story<LoginButtonProps> = (args) => <LoginButton {...args} />;
 
 export const Default = Template.bind({});
