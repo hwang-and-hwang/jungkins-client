@@ -21,13 +21,12 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
+    "react/function-component-definition": "off",
+    "import/no-extraneous-dependencies": "off",
+    "react/jsx-props-no-spreading": "off",
+    "import/prefer-default-export": "off",
+    "no-empty-pattern": "off",
     "prettier/prettier": "error",
-    "react/function-component-definition": [
-      "error",
-      {
-        "namedComponents": "function-declaration"
-      }
-    ],
     "import/order": [
       "error",
       {
@@ -57,7 +56,7 @@
       }
     ],
     "import/no-extraneous-dependencies": [
-      "error",
+      "warn",
       {
         "devDependencies": ["src/test/**", "**/*{.,_}{test,spec}.{ts,tsx}", "cypress/**"],
         "optionalDependencies": false
